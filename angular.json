@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "test-fcm": {
+    "angular-firebase-cloud-messaging": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "outputPath": "dist/test-fcm",
+            "outputPath": "dist/angular-firebase-cloud-messaging",
             "index": "src/index.html",
             "browser": "src/main.ts",
             "polyfills": [
@@ -24,7 +24,8 @@
               {
                 "glob": "**/*",
                 "input": "public"
-              }
+              },
+              "src/firebase-messaging-sw.js"
             ],
             "styles": [
               "src/styles.css"
@@ -59,10 +60,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "test-fcm:build:production"
+              "buildTarget": "angular-firebase-cloud-messaging:build:production"
             },
             "development": {
-              "buildTarget": "test-fcm:build:development"
+              "buildTarget": "angular-firebase-cloud-messaging:build:development"
             }
           },
           "defaultConfiguration": "development"
